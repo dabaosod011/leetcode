@@ -98,6 +98,7 @@
     <ClCompile Include="restore_ip_addresses.cpp" />
     <ClCompile Include="string_longest_substr_without_repeat.cpp" />
     <ClCompile Include="string_match.cpp" />
+    <ClCompile Include="string_palindrome_partitioning.cpp" />
     <ClCompile Include="string_reverse_words.cpp" />
     <ClCompile Include="string_word_break.cpp" />
     <ClCompile Include="string_word_ladder.cpp" />
