@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="array_median_of_two_sorted.cpp" />
+    <ClCompile Include="array_search_in_rotated_sorted_array.cpp" />
     <ClCompile Include="array_two_sum.cpp" />
     <ClCompile Include="array_unique_paths.cpp" />
     <ClCompile Include="binarytree_path_sum.cpp" />
