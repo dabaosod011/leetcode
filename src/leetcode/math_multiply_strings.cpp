@@ -50,8 +50,8 @@ BOOST_AUTO_TEST_SUITE( multiply_strings_test )
 	BOOST_AUTO_TEST_CASE( case1 ) 	
 	{
 		std::cout << "running multiply_strings_test case1..." <<std::endl;
-		std::string num1 = "123";
-		std::string num2 = "4567";
+		std::string num1 = "45678320943287839565";
+		std::string num2 = "988598329463857698";
 		std::cout <<  solution_->multiply(num1,num2) <<std::endl;
 	}
 
