@@ -52,7 +52,7 @@ BOOST_AUTO_TEST_SUITE( permutations2_test )
 	{
 		std::cout << "running permutations2_test case1..." <<std::endl;
 		vector<int> numbers = boost::assign::list_of(1)(2)(2);
-		vector<vector<int> > result = solution_->permute(numbers);
+		vector<vector<int> > result = solution_->permuteUnique(numbers);
 
 		for (auto it1 = result.begin(); it1 != result.end(); it1++)
 		{

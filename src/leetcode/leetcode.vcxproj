@@ -84,6 +84,7 @@
     <ClCompile Include="lc_header.cpp" />
     <ClCompile Include="leetcode.cpp" />
     <ClCompile Include="list_add2numbers.cpp" />
+    <ClCompile Include="list_copy_list_with_random_pointer.cpp" />
     <ClCompile Include="list_cycle.cpp" />
     <ClCompile Include="list_cycleII.cpp" />
     <ClCompile Include="list_insertion_sort.cpp" />
