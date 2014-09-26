@@ -41,7 +41,11 @@ namespace copy_list_with_random_pointer
 				newtmp = newtmp->next;
 			}
 
-			return newhead->next;
+			RandomListNode *newhead2 = newhead->next;
+			newhead->next = NULL;
+			delete newhead;
+
+			return newhead2;
 		}
 	};
 };

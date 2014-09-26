@@ -95,6 +95,7 @@
     <ClCompile Include="math_multiply_strings.cpp" />
     <ClCompile Include="math_permutations.cpp" />
     <ClCompile Include="math_permutations2.cpp" />
+    <ClCompile Include="math_powx_n.cpp" />
     <ClCompile Include="math_reverse_integer.cpp" />
     <ClCompile Include="math_reverse_polish_notation.cpp" />
     <ClCompile Include="math_single_number2.cpp" />
