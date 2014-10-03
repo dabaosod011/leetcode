@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode", "leetcode\leetco
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank", "hackerrank\hackerrank.vcxproj", "{6CB7EB1E-7399-4784-A9F5-81532BC97836}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "markeloff", "markeloff\markeloff.vcxproj", "{F77067DC-D9E8-4FF4-AFB5-527806953C78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,8 +21,15 @@ Global
 		{6CB7EB1E-7399-4784-A9F5-81532BC97836}.Debug|Win32.Build.0 = Debug|Win32
 		{6CB7EB1E-7399-4784-A9F5-81532BC97836}.Release|Win32.ActiveCfg = Release|Win32
 		{6CB7EB1E-7399-4784-A9F5-81532BC97836}.Release|Win32.Build.0 = Release|Win32
+		{F77067DC-D9E8-4FF4-AFB5-527806953C78}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F77067DC-D9E8-4FF4-AFB5-527806953C78}.Debug|Win32.Build.0 = Debug|Win32
+		{F77067DC-D9E8-4FF4-AFB5-527806953C78}.Release|Win32.ActiveCfg = Release|Win32
+		{F77067DC-D9E8-4FF4-AFB5-527806953C78}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
