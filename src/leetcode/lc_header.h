@@ -61,14 +61,27 @@ struct TreeNode
 
 void destoryTree(TreeNode *root);
 
-/**/
-
+/*random list node*/
 struct RandomListNode 
 {
 	int label;
 	RandomListNode *next, *random;
 	RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
 };
+
+/**
+ * Definition for undirected graph.
+ * 
+ */
+struct UndirectedGraphNode 
+{
+	int label;
+	vector<UndirectedGraphNode *> neighbors;
+	UndirectedGraphNode(int x) : label(x) {};
+};
+
+
+
 
 
 #endif

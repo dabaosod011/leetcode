@@ -80,6 +80,7 @@
     <ClCompile Include="binarytree_preorder_traversal.cpp" />
     <ClCompile Include="cache_lru.cpp" />
     <ClCompile Include="candy.cpp" />
+    <ClCompile Include="clone_graph.cpp" />
     <ClCompile Include="gas_station.cpp" />
     <ClCompile Include="graph_undirect_adjMatrix.cpp" />
     <ClCompile Include="lc_header.cpp" />
