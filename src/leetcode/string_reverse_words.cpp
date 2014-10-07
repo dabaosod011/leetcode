@@ -9,7 +9,7 @@ namespace reverse_words_in_a_string
 	class Solution {
 	public:
 		void reverseWords(string &s) {
-			s = trim(s);
+			s = lc_trim(s);
 			if(s.empty())
 				return;
 
@@ -17,27 +17,14 @@ namespace reverse_words_in_a_string
 			string::size_type pos = s.find_first_of(" ");
 			while(pos != string::npos)
 			{
-				tmp = trim(s.substr(0,pos)) + " " + tmp;
-				s = trim(s.substr(pos));
+				tmp = lc_trim(s.substr(0,pos)) + " " + tmp;
+				s = lc_trim(s.substr(pos));
 				pos = s.find_first_of(" ");
 			}
 
 			if( !s.empty() && !tmp.empty() )
-			s = trim(s) + " " + trim(tmp);
-		}
-
-		std::string trim(const std::string &s)
-		{
-			std::string::const_iterator it = s.begin();
-			while (it != s.end() && isspace(*it))
-				it++;
-
-			std::string::const_reverse_iterator rit = s.rbegin();
-			while (rit.base() != it && isspace(*rit))
-				rit++;
-
-			return std::string(it, rit.base());
-		}
+			s = lc_trim(s) + " " + lc_trim(tmp);
+		}		
 	};
 };
 
