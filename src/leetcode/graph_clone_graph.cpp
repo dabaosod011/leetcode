@@ -51,12 +51,4 @@ namespace clone_graph
 }
 
 BOOST_AUTO_TEST_SUITE( clone_graph_test )
-
-	boost::shared_ptr<clone_graph::Solution> solution_(new clone_graph::Solution());
-
-	BOOST_AUTO_TEST_CASE( case1 ) 	
-	{
-		std::cout << "running clone_graph_test case1..." <<std::endl;
-	}
-
 BOOST_AUTO_TEST_SUITE_END()	
