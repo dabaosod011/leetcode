@@ -105,6 +105,7 @@
     <ClCompile Include="bt_n_queens.cpp" />
     <ClCompile Include="dp_restore_ip_addresses.cpp" />
     <ClCompile Include="dp_longest_substr_without_repeat.cpp" />
+    <ClCompile Include="string_longest_palindromic_substring.cpp" />
     <ClCompile Include="string_match.cpp" />
     <ClCompile Include="dp_palindrome_partitioning.cpp" />
     <ClCompile Include="dp_palindrome_partitioning2.cpp" />

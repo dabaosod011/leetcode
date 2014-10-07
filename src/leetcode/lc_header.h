@@ -80,11 +80,4 @@ struct UndirectedGraphNode
 	UndirectedGraphNode(int x) : label(x) {};
 };
 
-//	trim a string
-std::string lc_trim(const std::string &s);
-
-
-
-
-
 #endif

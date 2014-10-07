@@ -51,8 +51,6 @@ namespace palindrome_partitioning
 				i++;
 				j--;
 			}
-
-			return true;
 		}
 	};
 };
