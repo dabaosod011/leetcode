@@ -11,6 +11,35 @@ namespace longest_palindromic_substring
 		public:
 		string longestPalindrome(string s) 
 		{
+			int len = s.size();
+			if (len<=1)
+				return s;
+
+			vector<vector<bool> > matrix(len,vector<bool>(len,false));
+			int maxLen = 0, start = 0;
+			for (int i=0; i<len; i++)
+			{
+				matrix[i][i] = true;
+				for(int j=0; j<i; j++)
+				{
+					if (i-j==1)
+						matrix[i][j] = (s[j]==s[i]);
+					else if(i-j>1)
+						matrix[i][j] = (s[j]==s[i]) && matrix[i-1][j+1];
+
+					if (matrix[i][j] && (i-j+1) > maxLen)
+					{
+						maxLen = i-j+1;
+						start = j;
+					}
+				}
+			}
+
+			return s.substr(start, maxLen);
+		}
+
+		string longestPalindrome_timeLimitExceeded(string s) 
+		{
 			std::set<std::string> known_palindrome;
 			if (s.size()<=1)
 				return s;
@@ -65,19 +94,19 @@ BOOST_AUTO_TEST_SUITE( longest_palindromic_substring_test )
 		std::cout << "running longest_palindromic_substring_test case1..." <<std::endl;
 
 		string s = "abb";
-		BOOST_ASSERT(solution_->longestPalindrome(s) == "a");
+		BOOST_ASSERT("bb" == solution_->longestPalindrome(s));
 
 		s = "aabaa";
-		BOOST_ASSERT(solution_->longestPalindrome(s) == "aabaa");
+		BOOST_ASSERT("aabaa" == solution_->longestPalindrome(s));
 		
 		s = "a";
-		BOOST_ASSERT(solution_->longestPalindrome(s) == "a");
+		BOOST_ASSERT("a" == solution_->longestPalindrome(s));
 
 		s = "zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir";
-		std::cout << solution_->longestPalindrome(s) <<std::endl;
+		BOOST_ASSERT("gykrkyg" == solution_->longestPalindrome(s));
 
 		s = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
-		std::cout << solution_->longestPalindrome(s) <<std::endl;
+		BOOST_ASSERT("qosoq" == solution_->longestPalindrome(s));
 	}
 
 BOOST_AUTO_TEST_SUITE_END()	
