@@ -85,6 +85,7 @@
     <ClCompile Include="graph_undirect_adjMatrix.cpp" />
     <ClCompile Include="lc_header.cpp" />
     <ClCompile Include="leetcode.cpp" />
+    <ClCompile Include="letter_combinations_of_a_phone_number.cpp" />
     <ClCompile Include="list_add2numbers.cpp" />
     <ClCompile Include="list_copy_list_with_random_pointer.cpp" />
     <ClCompile Include="list_cycle.cpp" />
