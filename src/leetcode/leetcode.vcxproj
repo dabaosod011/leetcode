@@ -75,6 +75,7 @@
     <ClCompile Include="array_search_in_rotated_sorted_array.cpp" />
     <ClCompile Include="array_two_sum.cpp" />
     <ClCompile Include="bt_n_queens2.cpp" />
+    <ClCompile Include="dp_triangle.cpp" />
     <ClCompile Include="dp_unique_paths.cpp" />
     <ClCompile Include="binarytree_path_sum.cpp" />
     <ClCompile Include="binarytree_postorder_traversal.cpp" />
