@@ -66,8 +66,7 @@ BOOST_AUTO_TEST_SUITE( n_queens2_test )
 	BOOST_AUTO_TEST_CASE( case1 ) 	
 	{
 		std::cout << "running n_queens2_test case1..." <<std::endl;
-		std::cout << solution_->totalNQueens(8) <<std::endl;
-
+		BOOST_ASSERT(92 == solution_->totalNQueens(8));
 	}
 
 BOOST_AUTO_TEST_SUITE_END()	
