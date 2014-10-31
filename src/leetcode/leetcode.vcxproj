@@ -74,6 +74,7 @@
     <ClCompile Include="array_median_of_two_sorted.cpp" />
     <ClCompile Include="array_search_in_rotated_sorted_array.cpp" />
     <ClCompile Include="array_two_sum.cpp" />
+    <ClCompile Include="bt_n_queens2.cpp" />
     <ClCompile Include="dp_unique_paths.cpp" />
     <ClCompile Include="binarytree_path_sum.cpp" />
     <ClCompile Include="binarytree_postorder_traversal.cpp" />
@@ -113,6 +114,7 @@
     <ClCompile Include="string_reverse_words.cpp" />
     <ClCompile Include="string_word_break.cpp" />
     <ClCompile Include="dp_word_ladder.cpp" />
+    <ClCompile Include="surrounded_regions.cpp" />
     <ClCompile Include="valid_palindrome.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

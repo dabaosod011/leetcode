@@ -14,6 +14,9 @@
     <ClCompile Include="markeloff.cpp" />
     <ClCompile Include="mobile numeric keypad problem.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="markeloff.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F77067DC-D9E8-4FF4-AFB5-527806953C78}</ProjectGuid>
     <RootNamespace>markeloff</RootNamespace>
