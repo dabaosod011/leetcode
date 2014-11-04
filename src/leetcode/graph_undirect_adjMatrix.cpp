@@ -1,4 +1,4 @@
-// undirection graph implemented by adjacency matrix
+ // undirection graph implemented by adjacency matrix
 
 #include "lc_header.h"
 
