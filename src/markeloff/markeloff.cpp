@@ -2,6 +2,15 @@
 
 #include "markeloff.h"
 
+void destoryTree(TreeNode *root)
+{
+	if (root == NULL)
+		return;
+	destoryTree(root->left);
+	destoryTree(root->right);
+	delete root;
+}
+
 BOOST_AUTO_TEST_SUITE( markeloff_test )
 	BOOST_AUTO_TEST_CASE( case1 ) 	
 	{
