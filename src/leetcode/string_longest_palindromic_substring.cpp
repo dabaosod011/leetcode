@@ -2,6 +2,7 @@
 
 /**
 *	https://oj.leetcode.com/problems/longest-palindromic-substring/
+*	http://www.ninehackers.com/2014/11/16/Performance_issue_caused_by_vector_operation/
 */
 
 namespace longest_palindromic_substring
@@ -15,19 +16,24 @@ namespace longest_palindromic_substring
 			if (len<=1)
 				return s;
 
-			vector<vector<bool> > matrix(len,vector<bool>(len,false));
+			//vector<vector<bool> > matrix(len,vector<bool>(len,false));
+			bool **matrix = new bool*[len];       
+			for(int i = 0; i < len; i++)
+			{
+				matrix[i] = new bool[i+1];         
+				for(int j = 0; j <= i; j++)
+					 matrix[i][j] = false;
+			}
+
 			int maxLen = 0, start = 0;
 			for (int i=0; i<len; i++)
 			{
 				matrix[i][i] = true;
 				for(int j=0; j<i; j++)
 				{
-					if (i-j==1)
-						matrix[i][j] = (s[j]==s[i]);
-					else if(i-j>1)
-						matrix[i][j] = (s[j]==s[i]) && matrix[i-1][j+1];
+					matrix[i][j] = (s[j]==s[i]) && ( i-j == 1 || matrix[i-1][j+1]);
 
-					if (matrix[i][j] && (i-j+1) > maxLen)
+					if ( (i-j+1)>maxLen && matrix[i][j] )
 					{
 						maxLen = i-j+1;
 						start = j;
@@ -35,53 +41,14 @@ namespace longest_palindromic_substring
 				}
 			}
 
+	
+			for(int i=0;i<len;i++)
+				delete [] matrix[i];
+			delete [] matrix; 
+
 			return s.substr(start, maxLen);
 		}
 
-		string longestPalindrome_timeLimitExceeded(string s) 
-		{
-			std::set<std::string> known_palindrome;
-			if (s.size()<=1)
-				return s;
-
-			int longest_len = 1;
-			string longest_str = s.substr(0,1);
-			string tmp;
-			for (int i=1; i<s.size(); i++)
-			{
-				for (int j = 0; j < i-longest_len; j++)
-				{
-					tmp = s.substr(j, i-j+1);
-					if (known_palindrome.find(tmp)!=known_palindrome.end())
-					{
-						longest_len++;
-						longest_str = tmp;
-					}
-					else if (isPalindrome(tmp))
-					{
-						known_palindrome.insert(tmp);
-						longest_len++;
-						longest_str = tmp;
-					}
-				}
-			}
-
-			return longest_str;
-		}
-
-		bool isPalindrome(string s)
-		{
-			int i=0, j =s.length()-1;
-			while(i < j)
-			{
-				if (s[i] != s[j])
-					return false;
-				i++;
-				j--;
-			}
-
-			return true;
-		}
 	};
 };
 
@@ -102,11 +69,11 @@ BOOST_AUTO_TEST_SUITE( longest_palindromic_substring_test )
 		s = "a";
 		BOOST_ASSERT("a" == solution_->longestPalindrome(s));
 
-		/*s = "zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir";
-		BOOST_ASSERT("gykrkyg" == solution_->longestPalindrome(s));*/
+		s = "zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir";
+		BOOST_ASSERT("gykrkyg" == solution_->longestPalindrome(s));
 
-		/*	s = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
-		BOOST_ASSERT("qosoq" == solution_->longestPalindrome(s));*/
+			s = "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx";
+		BOOST_ASSERT("qosoq" == solution_->longestPalindrome(s));
 	}
 
 BOOST_AUTO_TEST_SUITE_END()	
