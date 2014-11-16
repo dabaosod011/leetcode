@@ -11,7 +11,37 @@ namespace longest_consecutive_sequence
 	public:
 		int longestConsecutive(vector<int> &num) 
 		{
-			return 0;
+			int result = 0;
+			int max=1;    
+			std:: unordered_map<int,bool> mapping;
+			for (auto it=num.begin(); it!=num.end(); it++)
+				mapping[*it]=true;
+
+			for (auto it=num.begin(); it!=num.end(); it++)
+			{
+				max=1;  
+				int current = *it;
+             
+				mapping.erase(current);
+				while (mapping.count(current+1) > 0)
+				{
+					max++;
+					mapping.erase(current+1);
+					current++;
+				}
+             
+				current = *it;
+				while (mapping.count(current-1) > 0)
+				{
+					max++;
+					mapping.erase(current-1);
+					current--;
+				}
+             
+				result = std::max(result,max);
+			}
+
+			return result;
 		}
 	};
 };
