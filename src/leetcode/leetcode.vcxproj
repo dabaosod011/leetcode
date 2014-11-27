@@ -77,6 +77,7 @@
     <ClCompile Include="array_pascal_triangle2.cpp" />
     <ClCompile Include="array_search_in_rotated_sorted_array.cpp" />
     <ClCompile Include="array_two_sum.cpp" />
+    <ClCompile Include="binarytree_maximum_path_sum.cpp" />
     <ClCompile Include="binarytree_path_sum2.cpp" />
     <ClCompile Include="binarytree_sum_root_to_leaf_numbers.cpp" />
     <ClCompile Include="bt_n_queens2.cpp" />
