@@ -123,6 +123,7 @@
     <ClCompile Include="dp_word_ladder.cpp" />
     <ClCompile Include="surrounded_regions.cpp" />
     <ClCompile Include="valid_palindrome.cpp" />
+    <ClCompile Include="zigzag_conversion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
