@@ -119,6 +119,7 @@
     <ClCompile Include="string_match.cpp" />
     <ClCompile Include="dp_palindrome_partitioning.cpp" />
     <ClCompile Include="dp_palindrome_partitioning2.cpp" />
+    <ClCompile Include="string_regular_expression_matching.cpp" />
     <ClCompile Include="string_reverse_words.cpp" />
     <ClCompile Include="string_string_to_integer.cpp" />
     <ClCompile Include="string_word_break.cpp" />
