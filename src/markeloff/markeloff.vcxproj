@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="count_inversions.cpp" />
+    <ClCompile Include="find_number_of_islands.cpp" />
     <ClCompile Include="markeloff.cpp" />
     <ClCompile Include="mobile numeric keypad problem.cpp" />
     <ClCompile Include="print_binarytree_in_vertical_order.cpp" />
