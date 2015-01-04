@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="array_3sum.cpp" />
+    <ClCompile Include="array_array_3sum_closest.cpp" />
     <ClCompile Include="array_container_with_most_water.cpp" />
     <ClCompile Include="array_longest_consecutive_sequence.cpp" />
     <ClCompile Include="array_median_of_two_sorted.cpp" />
