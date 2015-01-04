@@ -151,4 +151,19 @@ BOOST_AUTO_TEST_SUITE( four_sum_test )
 		}
 	}
 
+	BOOST_AUTO_TEST_CASE( case2 ) 	
+	{
+		std::cout << "running four_sum case2..." <<std::endl;
+
+		vector<int> nums = boost::assign::list_of(-1)(0)(1)(2)(-1)(-2)(0)(3)(-3);		
+		vector<vector<int> > result = solution_->fourSum(nums, 0);
+
+		for(auto row=result.begin(); row<result.end(); row++)
+		{
+			for (auto col=row->begin(); col<row->end(); col++)
+				std::cout << *col << " ";
+			std::cout << std::endl;
+		}
+	}
+
 BOOST_AUTO_TEST_SUITE_END()	
