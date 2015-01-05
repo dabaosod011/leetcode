@@ -104,6 +104,7 @@
     <ClCompile Include="list_cycleII.cpp" />
     <ClCompile Include="list_insertion_sort.cpp" />
     <ClCompile Include="list_merge_sort.cpp" />
+    <ClCompile Include="list_remove_nth_node_from_end_of_list.cpp" />
     <ClCompile Include="list_reorder.cpp" />
     <ClCompile Include="list_reverse2.cpp" />
     <ClCompile Include="math_max_points_on_a_line.cpp" />
