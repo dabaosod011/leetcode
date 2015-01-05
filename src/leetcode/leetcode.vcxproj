@@ -131,6 +131,7 @@
     <ClCompile Include="string_regular_expression_matching.cpp" />
     <ClCompile Include="string_reverse_words.cpp" />
     <ClCompile Include="string_string_to_integer.cpp" />
+    <ClCompile Include="string_valid_parentheses.cpp" />
     <ClCompile Include="string_word_break.cpp" />
     <ClCompile Include="dp_word_ladder.cpp" />
     <ClCompile Include="surrounded_regions.cpp" />
