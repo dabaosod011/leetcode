@@ -123,6 +123,7 @@
     <ClCompile Include="number_palindrome_number .cpp" />
     <ClCompile Include="number_roman_to_integer.cpp" />
     <ClCompile Include="string_edit_distance.cpp" />
+    <ClCompile Include="string_generate_parentheses.cpp" />
     <ClCompile Include="string_longest_common_prefix.cpp" />
     <ClCompile Include="string_longest_palindromic_substring.cpp" />
     <ClCompile Include="string_match.cpp" />
