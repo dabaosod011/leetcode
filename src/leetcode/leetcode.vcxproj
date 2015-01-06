@@ -103,6 +103,7 @@
     <ClCompile Include="list_cycle.cpp" />
     <ClCompile Include="list_cycleII.cpp" />
     <ClCompile Include="list_insertion_sort.cpp" />
+    <ClCompile Include="list_merge_k_sorted_lists.cpp" />
     <ClCompile Include="list_merge_sort.cpp" />
     <ClCompile Include="list_remove_nth_node_from_end_of_list.cpp" />
     <ClCompile Include="list_reorder.cpp" />
